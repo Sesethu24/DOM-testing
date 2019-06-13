@@ -2,7 +2,7 @@ var billStringElement = document.querySelector(".billString");
 var billTotalElement = document.querySelector(".billTotal");
 var calculateBtnElement = document.querySelector(".calculateBtn");
 
-  var amount = calculateBtnClicked();
+  var amount = CalculateBtnClicked();
   
     calculateBtnElement.addEventListener('click', function(){
         amount.total();
@@ -14,11 +14,11 @@ var calculateBtnElement = document.querySelector(".calculateBtn");
 
       var roundedBillTotal = billTotalElement;
    
-    if (calculateBtnClicked.criticalLevel){
+    if (amount.critical){
         billTotalElement.classList.add("danger");
         billTotalElement.classList.remove("warning");
     }
-    else if (calculateBtnClicked.warningLevel){
+    else if (amount.warning){
         billTotalElement.classList.add("warning");
         billTotalElement.classList.remove("danger");
     }   
@@ -30,4 +30,4 @@ var calculateBtnElement = document.querySelector(".calculateBtn");
     });
   
 
-   calculateBtnElement.addEventListener('click', calculateBtnClicked);
+   calculateBtnElement.addEventListener('click', CalculateBtnClicked);

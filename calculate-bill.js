@@ -1,8 +1,8 @@
-function calculateBtnClicked(){
+function CalculateBtnClicked(){
 
     var totalBill = 0;
 
-    function calculate(param){
+    function Calculate(param){
        if(param === "call"){
          totalBill += 2.75;
        }else if(param === "sms"){
@@ -13,17 +13,17 @@ function calculateBtnClicked(){
       return "R" + totalBill.toFixed(2);
     }
 
-    function criticalLevel(){
+    function CriticalLevel(){
        return totalBill >= 30;
     }
-    function warningLevel(){
+    function WarningLevel(){
       return totalBill >= 20;
     }
     return{
-      total: calculate,
+      total: Calculate,
       bill: Billtotal, 
-      critical: criticalLevel,
-      warning: warningLevel    
+      critical: CriticalLevel,
+      warning: WarningLevel    
     }
     
 
