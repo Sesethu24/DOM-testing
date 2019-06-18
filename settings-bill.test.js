@@ -1,11 +1,24 @@
 describe('Settings Bill function', function(){
 
-    it('should take any amount entered, calculate it and give the total phone bill for sms', function(){
-        var funct = SettingsBill();
-        funct.totals(3)
-        funct.setting("sms");
-
-        assert.equal(funct.totals(), 0);
+    it('should take any amount entered, calculate it and give the total phone bill for a call', function(){
+        var totalPrice = SettingsBill();
+        totalPrice.setCallCost(3)
+        assert.equal(totalPrice.getCallCost(), 3);
+    }); 
+    it('should take any amount entered, calculate it and give the total phone bill for an sms', function(){
+        var totalPrice = SettingsBill();
+        totalPrice.setSmsCost(5)
+        assert.equal(totalPrice.getSmsCost(), 5);
+    }); 
+    it('should show a warning colour when the total gets to warning level', function(){
+        var totalPrice = SettingsBill();
+        totalPrice.setWarningPoint(20)
+        assert.equal(totalPrice.getWarningPoint(), 20);
+    }); 
+    it('should show danger when the total gets to critical level', function(){
+        var totalPrice = SettingsBill();
+        totalPrice.setCriticalPoint(30)
+        assert.equal(totalPrice.getCriticalPoint(), 30);
     }); 
 
 });

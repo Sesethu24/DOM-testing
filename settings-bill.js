@@ -1,38 +1,51 @@
 function SettingsBill(){
 
-    var sett = 0;
-    var call = 0;
-    var sms = 0;
+    var callCost = 0;
+    var smsCost = 0;
+    var totalCost = 0;
+    var criticalPoint = 0;
+    var warningPoint = 0;
 
-    var smsElement = 0;
-    
-
-    function Settings(type){
-       
-  if (type === "call"){
-       call += callElement;
-   }
-   else if (type === "sms"){
-       sms += smsElement;
-   }
+    function setCallCost(amount){
+        callCost += amount;
+    }
+    function getCallCost(){
+        return callCost;
+    }
+    function setSmsCost(amount){
+        smsCost += amount;
+    }
+    function getSmsCost(){
+        return smsCost;
+    }
+    function setTotalCost(){
+        totalCost = smsCost + callCost;
+    }
+    function getTotalCost(){
+    return totalCost;
 }
-          function AddBtn(){
-            return sett;
-          }
-    
- function CriticalLev(){
-     return sett >= 50;
-           
- }
- function WarningLev(){
-     return sett >= 30;
- }
-
-return{
-    setting: Settings,
-    totals: AddBtn,
-    critic: CriticalLev,
-    warn: WarningLev
-  
-      }
+    function setCriticalPoint(amount){
+        criticalPoint += amount;
+    }
+    function getCriticalPoint(){
+        return criticalPoint;
+    }
+    function setWarningPoint(amount){
+      warningPoint += amount;
+    }
+     function getWarningPoint(){
+         return warningPoint;
+     }
+return {
+      setCallCost,
+      getCallCost,
+      setSmsCost,
+      getSmsCost,
+      setTotalCost,
+      getTotalCost,
+      setCriticalPoint,
+      getCriticalPoint,
+      getWarningPoint,
+      setWarningPoint
+}
 }
