@@ -1,9 +1,9 @@
 describe('calculate bill function', function(){
 
     it('should calculate the total phone bill for sms', function(){
-        var sbuda = CalculateBtnClicked();
-        sbuda.total("sms");
-        assert.equal(sbuda.bill(), 'R0.75');
+        var calc = CalculateBtnClicked();
+        calc.total("sms");
+        assert.equal(calc.bill(), 'R0.75');
     });
     it('should calculate the total phone bill for calls', function(){
         var tot = CalculateBtnClicked();

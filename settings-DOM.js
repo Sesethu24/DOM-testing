@@ -10,8 +10,7 @@ var warningLevel = document.querySelector(".warningLevelSetting");
 var criticalLevel = document.querySelector(".criticalLevelSetting");
 var updateSettingsBtn = document.querySelector(".updateSettings");
 
-var callElement = 0;
-var SmssElement = 0;
+
 var warningLev = 0;
 var criticalLev = 0;
 

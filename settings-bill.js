@@ -1,23 +1,25 @@
 function SettingsBill(){
 
     var sett = 0;
-    // var calcu = 0;
+    var call = 0;
+    var sms = 0;
+
+    var smsElement = 0;
+    
 
     function Settings(type){
        
-        if(type === "call"){
-            sett += 2.75;
-          }else if(type === "sms"){
-            sett += 0.75;
-          }
-          function TotalAmount(){
-
-            return "R" + sett.toFixed(2);
-          }
+  if (type === "call"){
+       call += callElement;
+   }
+   else if (type === "sms"){
+       sms += smsElement;
+   }
+}
           function AddBtn(){
-           
+            return sett;
           }
-    }
+    
  function CriticalLev(){
      return sett >= 50;
            
@@ -28,8 +30,9 @@ function SettingsBill(){
 
 return{
     setting: Settings,
-    totals: TotalAmount,
+    totals: AddBtn,
     critic: CriticalLev,
     warn: WarningLev
-}
+  
+      }
 }
