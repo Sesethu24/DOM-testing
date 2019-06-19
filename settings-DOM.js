@@ -40,28 +40,27 @@ settingsButton.addEventListener('click', AddFunction);
     
  function UpdateButton()
  {
-    callElement = Number(callsElement.value);
-    SmssElement = Number(smsElement.value);
-    warningLev = Number(warningLevel.value);
-    criticalLev = Number(criticalLevel.value);
-
-
-    
-    if (totalCost >= criticalLev){
+     price.getTotalCost(updateSettingsBtn.value);
+    // callElement = Number(callsElement.value);
+    // SmssElement = Number(smsElement.value);
+    // warningLev = Number(warningLevel.value);
+    // criticalLev = Number(criticalLevel.value);
+   if (price.totalCost() >= criticalPoint){
         
         costSettings.classList.add("danger");
         costSettings.classList.remove("warning");
     }
-    else if (totalCost >= warningLev){
+    else if (price.totalCost() >= warningPoint){
         costSettings.classList.add("warning");
         costSettings.classList.remove("danger");
     }
-    if (totalCost < warningLev){
+    if (price.totalCost() < warningPoint){
         costSettings.classList.remove("warning");
         costSettings.classList.remove("danger");
     }
-    if (criticalLev < totalCost ){
+    if (criticalPoint < price.totalCost() ){
         costSettings.classList.remove("warning");
         costSettings.classList.remove("danger");
     }
  }
+ updateSettingsBtn.addEventListener('click', UpdateButton);
