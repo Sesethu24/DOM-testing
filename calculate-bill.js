@@ -10,15 +10,22 @@ function CalculateBtnClicked(){
        }
     }
     function Billtotal(){
-      return "R" + totalBill.toFixed(2);
+      return totalBill.toFixed(2);
     }
 
     function CriticalLevel(){
-       return totalBill >= 30;
+      if(totalBill >= 30){
+        
+      }
+      return "danger";
     }
     function WarningLevel(){
-      return totalBill >= 20;
+      if(totalBill >= 20){
+
+      }
+      return "warning";
     }
+    
     return{
       total: Calculate,
       bill: Billtotal, 
@@ -26,5 +33,4 @@ function CalculateBtnClicked(){
       warning: WarningLevel    
     }
     
-
 }

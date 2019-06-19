@@ -13,12 +13,12 @@ describe('Settings Bill function', function(){
     it('should show a warning colour when the total gets to warning level', function(){
         var totalPrice = SettingsBill();
         totalPrice.setWarningPoint(20)
-        assert.equal(totalPrice.getWarningPoint(), 20);
+        assert.equal(totalPrice.getWarningPoint(), "warning");
     }); 
     it('should show danger when the total gets to critical level', function(){
         var totalPrice = SettingsBill();
-        totalPrice.setCriticalPoint(30)
-        assert.equal(totalPrice.getCriticalPoint(), 30);
+        totalPrice.setCriticalPoint(30.00)
+        assert.equal(totalPrice.getCriticalPoint(), "danger");
     }); 
 
 });

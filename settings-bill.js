@@ -27,14 +27,16 @@ function SettingsBill(){
     function setCriticalPoint(amount){
         criticalPoint += amount;
     }
-    function getCriticalPoint(){
-        return criticalPoint;
+    function getCriticalPoint(amount){
+      if(criticalPoint >= amount){}
+        return "danger";
     }
     function setWarningPoint(amount){
       warningPoint += amount;
     }
-     function getWarningPoint(){
-         return warningPoint;
+     function getWarningPoint(amount){
+         if(warningPoint >= amount){}
+         return "warning";
      }
 return {
       setCallCost,

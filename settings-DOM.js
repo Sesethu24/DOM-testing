@@ -11,48 +11,32 @@ var criticalLevel = document.querySelector(".criticalLevelSetting");
 var updateSettingsBtn = document.querySelector(".updateSettings");
 
 
-var warningLev = 0;
-var criticalLev = 0;
-
-var Calls = 0;
-var Sms = 0;
-var totalCost = 0;
+var price = SettingsBill();
 
 function AddFunction(){
-    if(!(totalCost >= criticalLev)){
-     
-    settingsButton = document.querySelector("input[name='radioButton']:checked");
-    if (settingsButton){
-         radioButton = settingsButton.value
-    
-    }
-   
-    if (radioButton === "call"){
-        Calls += callElement;
-    }
-    else if (radioButton === "sms"){
-        Sms += SmssElement;
-    }
-    
-  
-    costCalls.innerHTML = Calls.toFixed(2);
-    costSms.innerHTML = Sms.toFixed(2);
-     totalCost = Calls + Sms;
-    costSettings.innerHTML = totalCost.toFixed(2); 
-
-    
-    if (totalCost >= criticalLev){
-        
+   price.getTotalCost(settingsButton.value);
+//     if(!(totalCost >= criticalLev)){
+//     settingsButton = document.querySelector("input[name='radioButton']:checked");
+//     if (settingsButton){
+//          radioButton = settingsButton.value }
+//     if (radioButton === "call"){
+//         Calls += callElement;}
+//     else if (radioButton === "sms"){
+//         Sms += SmssElement;}
+//     costCalls.innerHTML = Calls.toFixed(2);
+//     costSms.innerHTML = Sms.toFixed(2);
+//      totalCost = Calls + Sms;
+//     costSettings.innerHTML = totalCost.toFixed(2); 
+    if (price.totalCost() >= criticalPoint){
         costSettings.classList.add("danger");
         costSettings.classList.remove("warning");
     }
-    else if (totalCost >= warningLev){
+    else if (price.totalCost() >= warningPoint){
         costSettings.classList.add("warning");
         costSettings.classList.remove("danger");
     }
 }
-}
- settingsButton.addEventListener('click', AddFunction);
+settingsButton.addEventListener('click', AddFunction);
     
  function UpdateButton()
  {
