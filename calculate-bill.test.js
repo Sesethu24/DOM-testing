@@ -17,7 +17,7 @@ describe('calculate bill function', function(){
         totalBill.total('call');
         assert.equal(totalBill.bill(), '6.25');
     });
-    it('should show warning level if total exceeds R20', function(){
+    it('should show warning level if total exceeds R20 and reaches warning level', function(){
         var totalBill = CalculateBtnClicked();
         totalBill.total('sms');
         totalBill.total('call');
@@ -32,7 +32,7 @@ describe('calculate bill function', function(){
         totalBill.total('call');
         assert.equal(totalBill.warning(),"warning");
     });
-    it('should show critical level if the total bill exceeds R30', function(){
+    it('should show danger if the total bill exceeds R30 and reaches the critical level', function(){
         var totalBill = CalculateBtnClicked();
         totalBill.total('sms');
         totalBill.total('call');

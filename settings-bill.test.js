@@ -10,7 +10,7 @@ describe('Settings Bill function', function(){
         totalPrice.setSmsCost(5)
         assert.equal(totalPrice.getSmsCost(), 5);
     }); 
-    it('should show a warning colour when the total gets to warning level', function(){
+    it('should show warning when the total gets to warning level', function(){
         var totalPrice = SettingsBill();
         totalPrice.setWarningPoint(20)
         assert.equal(totalPrice.getWarningPoint(), "warning");
